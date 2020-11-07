@@ -73,6 +73,11 @@
         border-right-width: 1px;
     }
 
+    tr {
+        /* Fixes position: sticky headers from covering rows when deep linked, by keeping the anchor away from the top */
+        scroll-margin-top: 130px;
+    }
+
     .has-tip {
         text-decoration: underline;
         text-decoration-style: dotted;
@@ -196,7 +201,7 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            <p class="float-left" id="timestamps">Last scrape: <span class="timestamp">{% SCRAPE_TIME %}</span> | Last batch: <span class="timestamp">{% BATCH_TIME %}</span></p>
+            <p class="float-left" id="timestamps">Last scrape: <span class="timestamp">{% SCRAPE_TIME %}</span> | Last batch: <span class="timestamp">{% BATCH_TIME %}</span> {% LAST_BATCH %}</p>
             <div id="template-hash" style="display: none;">{% TEMPLATE_HASH %}</div>
             <div id="page-metadata" style="display: none;">{% PAGE_METADATA %}</div>
         </div>
